@@ -1,6 +1,7 @@
 # RAG-Based Talent Search and Recommendation System
 
 <img src="[https://github.com/user-attachments/assets/69fef935-2676-48cf-9ef7-66cd85cad565](https://github.com/user-attachments/assets/6b5905f1-5e4c-49b6-a413-27a53fb6cf8f)" alt="image" style="width:800px;">
+![image](https://github.com/user-attachments/assets/c0081eb6-1b22-4a82-80d6-ff55cff0b1f3)
 
 ## Project Overview
 This project aims to develop a "RAG-Based Talent Search and Recommendation System" to streamline corporate recruitment processes and quickly identify the most suitable candidates. The project utilizes Retrieval-Augmented Generation (RAG) technology to efficiently search and summarize a vast number of resumes and cover letters, providing companies with the best-fit candidates.
