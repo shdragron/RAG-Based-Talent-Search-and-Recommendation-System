@@ -3,8 +3,11 @@
 
 ![image](https://github.com/user-attachments/assets/c0081eb6-1b22-4a82-80d6-ff55cff0b1f3)
 
+
 ## Project Overview
 This project aims to develop a "RAG-Based Talent Search and Recommendation System" to streamline corporate recruitment processes and quickly identify the most suitable candidates. The project utilizes Retrieval-Augmented Generation (RAG) technology to efficiently search and summarize a vast number of resumes and cover letters, providing companies with the best-fit candidates.
+
+The project team included an HR specialist whose insights were instrumental in ensuring that the system effectively meets real-world recruitment needs. Their expertise contributed to designing a solution tailored to the complex requirements of modern hiring processes.
 
 Currently, the recruitment environment is highly inefficient, requiring manual review of a massive volume of documents. This project aims to solve these issues by using state-of-the-art NLP technology, specifically RAG, to automate the document search and summary process, thereby maximizing the efficiency of recruitment processes.
 
@@ -25,6 +28,7 @@ Modern recruitment is highly competitive, and the speed and accuracy of talent a
 1. **Contextual Analysis-Based Search**
    - Unlike existing similar services that rely solely on keyword matching, this system provides more accurate recommendations by analyzing context. The image below highlights this differentiation.
 
+   ![Contextual Analysis-Based Search](./static/contextual_search_comparison.png)
 
 2. **User-Customized Recommendation System**
    - Customizes job postings or career maps based on the applicant's resume information. This helps save time and enhances efficiency for both companies and applicants.
@@ -52,16 +56,36 @@ This project is built using FastAPI for the backend and HTML, CSS, JavaScript fo
 ### 1. **Upload Workflow**
 - PDF Upload -> Conversion to Document -> Metadata Extraction and Update -> Storage in Vector DB (ChromaDB)
 
+   ![Upload Workflow](./static/upload_workflow.png)
 
 ### 2. **Search Workflow**
 - JD Input -> Prompt Data Processing -> Information Retrieval -> Score Calculation (TP = RP + FP) -> Provide Recommended Candidate Rankings
 
+   ![Search Workflow](./static/search_workflow.png)
 
 ## Project Outcome and Future Development
-This project has significantly improved the inefficiencies of traditional recruitment processes, successfully enhancing recommendation accuracy and evaluation reliability. Future directions include multi-language support, adding detailed evaluation functions for more complex roles, and implementing more sophisticated user-customized recommendations.
+The project significantly improved the inefficiencies of traditional recruitment processes, successfully enhancing recommendation accuracy and evaluation reliability. The involvement of an HR specialist provided valuable insights, ensuring that our solution effectively meets the practical needs of real-world recruitment scenarios.
+
+Future directions include multi-language support, adding detailed evaluation functions for more complex roles, and implementing more sophisticated user-customized recommendations.
 
 Despite the team being composed of non-majors, the project was successfully carried out as a full-stack development, with a focus on applying the latest technology trends to improve project completeness. As a result, we achieved both enhanced technical skills and strengthened problem-solving capabilities.
 
+# Citation
+
+```
+This project uses KR-SBERT: A Pre-trained Korean-specific Sentence-BERT model.
+For more information, visit: https://github.com/snunlp/KR-SBERT
+
+If you use this model in your project, please cite:
+@misc{kr-sbert,
+  author = {Park, Suzi and Hyopil Shin},
+  title = {KR-SBERT: A Pre-trained Korean-specific Sentence-BERT model},
+  year = {2021},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/snunlp/KR-SBERT}}
+}
+```
 
 
 # Citation
