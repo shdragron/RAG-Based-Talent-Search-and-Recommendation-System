@@ -1,6 +1,5 @@
 # RAG-Based Talent Search and Recommendation System
 
-<img src="https://github.com/user-attachments/assets/c0081eb6-1b22-4a82-80d6-ff55cff0b1f3" alt="image" style="width:800px;">
 
 ![image](https://github.com/user-attachments/assets/c0081eb6-1b22-4a82-80d6-ff55cff0b1f3)
 
