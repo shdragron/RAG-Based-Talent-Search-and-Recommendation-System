@@ -1,74 +1,84 @@
 # RAG-Based Talent Search and Recommendation System
 
-
 ![image](https://github.com/user-attachments/assets/c0081eb6-1b22-4a82-80d6-ff55cff0b1f3)
 
-
 ## Project Overview
-This project aims to develop a "RAG-Based Talent Search and Recommendation System" to streamline corporate recruitment processes and quickly identify the most suitable candidates. The project utilizes Retrieval-Augmented Generation (RAG) technology to efficiently search and summarize a vast number of resumes and cover letters, providing companies with the best-fit candidates.
+This project aims to develop a "RAG-Based Talent Search and Recommendation System" to streamline corporate recruitment processes and identify suitable candidates efficiently. The project uses Retrieval-Augmented Generation (RAG) technology to search and summarize numerous resumes and cover letters, helping companies find the best-fit candidates.
 
-The project team included an HR specialist whose insights were instrumental in ensuring that the system effectively meets real-world recruitment needs. Their expertise contributed to designing a solution tailored to the complex requirements of modern hiring processes.
+The system was designed with insights from an HR specialist to ensure it meets the needs of real-world recruitment. Their expertise helped create a practical solution aligned with the complexities of modern hiring.
 
-Currently, the recruitment environment is highly inefficient, requiring manual review of a massive volume of documents. This project aims to solve these issues by using state-of-the-art NLP technology, specifically RAG, to automate the document search and summary process, thereby maximizing the efficiency of recruitment processes.
+Currently, the recruitment process is often inefficient, requiring manual review of a large volume of documents. This project aims to address these inefficiencies by automating document search and summary using state-of-the-art NLP technology, specifically RAG.
 
 ## Project Background and Need
-Modern recruitment is highly competitive, and the speed and accuracy of talent acquisition determine corporate competitiveness. Reviewing numerous resumes and cover letters manually takes significant time and lacks an objective and systematic evaluation system. To address these issues, the RAG-based Talent Search and Recommendation System has been introduced. RAG technology searches external knowledge bases and summarizes recent information, offering greater accuracy through contextual analysis rather than traditional keyword-based searches.
+Recruitment today is highly competitive, where the speed and accuracy of talent acquisition play a significant role. Reviewing resumes manually is time-consuming and lacks systematic evaluation. To overcome these challenges, the RAG-based Talent Search and Recommendation System was introduced. RAG technology allows for more precise contextual analysis compared to traditional keyword-based searches.
+
+## System Workflow
+
+![image](https://github.com/user-attachments/assets/dbca8908-6535-4443-baac-78d6363a90cf)
 
 ## Key Features
-### 1. **Introduction of RAG Technology**
-- Supports searching and summarizing the latest information using external knowledge bases. This ensures greater accuracy and utility compared to existing NLP technologies.
+### 1. **RAG Technology**
+- Searches and summarizes the latest information using external knowledge bases, offering greater accuracy compared to existing NLP technologies.
 
 ### 2. **Automated Scoring and Ranking**
-- Automatically evaluates candidate suitability based on Job Description (JD), experience, qualifications, and skills. This provides an objective basis for evaluating and ranking candidates.
+- Evaluates candidate suitability based on Job Description (JD), experience, qualifications, and skills, providing an objective ranking.
+
+   ![image](https://github.com/user-attachments/assets/d7d91f48-e240-44eb-8c2e-e348408be2bb)
 
 ### 3. **Conversational Chatbot Interface**
-- Provides a user-friendly chatbot interface that allows users to input their requirements easily and receive immediate results. This feature enhances user experience and accessibility.
+- Offers a chatbot interface that allows users to enter requirements and receive immediate results, improving accessibility and user experience.
 
 ## Differentiation Points and Visuals
 1. **Contextual Analysis-Based Search**
-   - Unlike existing similar services that rely solely on keyword matching, this system provides more accurate recommendations by analyzing context. The image below highlights this differentiation.
+   - Unlike keyword-only services, this system analyzes context for more accurate recommendations.
 
-   ![Contextual Analysis-Based Search](./static/contextual_search_comparison.png)
-
-2. **User-Customized Recommendation System**
-   - Customizes job postings or career maps based on the applicant's resume information. This helps save time and enhances efficiency for both companies and applicants.
-
-
-3. **Urgent Talent Search Support**
-   - Supports companies in urgently finding candidates for specific roles, providing summaries and visual score distributions for each recommended candidate.
-
+2. **Urgent Talent Search Support**
+   - Quickly finds candidates for urgent roles, providing summaries and score distributions for recommended candidates.
 
 ## Technology Stack and Development Approach
-This project is built using FastAPI for the backend and HTML, CSS, JavaScript for the frontend. Chroma DB and Pydantic Schema were utilized for database management, responsible for data validation and metadata processing. The Agile development methodology was adopted to iteratively improve functionality based on customer feedback.
+The project uses FastAPI for the backend and HTML, CSS, JavaScript for the frontend. The following technologies were employed as part of the project's solution:
+
+- **RAG (Retrieval-Augmented Generation)**: Combines document retrieval with LLM-based generation to answer queries based on external documents.
+- **Pydantic Schema**: Used in combination with FastAPI to validate and manage the structure of resume data.
+- **Prompt Engineering**: Utilized Langchain's PromptTemplate and SystemMessage to optimize LLM responses for extracting key details from prompts.
+- **Embedding Model (KR-SBERT)**: Used for efficient vectorization of sentence meanings, enabling precise resume search and matching.
+- **LLM Model (Llama-3-Korean-Bllossom-8B)**: An LLM specifically optimized for the Korean language, enhancing the AI capabilities of the system.
+
+Chroma DB was used for database management, and an agile methodology was adopted to iteratively enhance functionality based on feedback.
 
 ### Technologies Used
-- **RAG (Retrieval-Augmented Generation)**: A technology that generates responses using LLM by referring to external documents, improving reliability for up-to-date information.
-- **Prompt Engineering**: Used Langchain's PromptTemplate and SystemMessage to ensure the system returns optimal values.
-- **Embedding Model**: Used the KR-SBERT model for efficient vectorization of sentence meanings, enabling effective searching of candidate resumes.
+
+- **RAG (Retrieval-Augmented Generation)**: Generates responses using LLM by referring to external documents, ensuring reliable information.
+- **Prompt Engineering**: Langchain's PromptTemplate and SystemMessage were used for optimal system output.
+- **Embedding Model**: KR-SBERT model for efficient vectorization of sentence meanings, aiding in effective resume search.
 
 ## Project Development Timeline
-- **November 7**: Started initial model development
-- **November 14**: Improved evaluation method to reduce dependence on retrievers
-- **November 18**: Introduced multi-level evaluation method to enhance evaluation precision
-- **November 25**: Finalized the model by introducing RP (Retrieval Point) and FP (Fundamental Point) to improve score reliability and reduce computation.
+- **November 7**: Initial model development started
+- **November 14**: Improved evaluation method to reduce dependency on retrievers
+- **November 18**: Introduced multi-level evaluation for better precision
+- **November 25**: Finalized the model with RP (Retrieval Point) and FP (Fundamental Point) to enhance reliability and reduce computation
 
-## System Workflow
-### 1. **Upload Workflow**
-- PDF Upload -> Conversion to Document -> Metadata Extraction and Update -> Storage in Vector DB (ChromaDB)
+## User Guide
 
-   ![Upload Workflow](./static/upload_workflow.png)
+### 1. **How to Upload a Document**
 
-### 2. **Search Workflow**
-- JD Input -> Prompt Data Processing -> Information Retrieval -> Score Calculation (TP = RP + FP) -> Provide Recommended Candidate Rankings
+- Click the 'Select File' button and choose the file to upload from your device -> Once you see the uploaded file name in the UI, click the 'Upload PDF' button and wait until the popup window appears
 
-   ![Search Workflow](./static/search_workflow.png)
+   ![image](https://github.com/user-attachments/assets/a738a4f6-da20-4bd5-8884-8b0f2b6dd4e4)
+
+### 2. **How to Search for Candidates**
+
+- Enter the Job Description (JD) or simply type in your desired conditions as a prompt -> Wait for the output, the chatbot will provide a response along with detailed explanations on the side
+
+   ![image](https://github.com/user-attachments/assets/d0a77911-f574-48aa-baac-9570665c46f1)
+
 
 ## Project Outcome and Future Development
-The project significantly improved the inefficiencies of traditional recruitment processes, successfully enhancing recommendation accuracy and evaluation reliability. The involvement of an HR specialist provided valuable insights, ensuring that our solution effectively meets the practical needs of real-world recruitment scenarios.
+The project improved inefficiencies in traditional recruitment, enhancing recommendation accuracy and reliability. Input from an HR specialist ensured the solution meets real-world needs.
 
-Future directions include multi-language support, adding detailed evaluation functions for more complex roles, and implementing more sophisticated user-customized recommendations.
+Future improvements include multi-language support, adding evaluation features for complex roles, and implementing advanced user customization.
 
-Despite the team being composed of non-majors, the project was successfully carried out as a full-stack development, with a focus on applying the latest technology trends to improve project completeness. As a result, we achieved both enhanced technical skills and strengthened problem-solving capabilities.
+Despite being developed by a team of non-specialists, the project was completed successfully as a full-stack development, applying modern technology trends to improve the solution. The experience resulted in strengthened technical and problem-solving skills.
 
 # Citation
 
@@ -87,20 +97,3 @@ If you use this model in your project, please cite:
 }
 ```
 
-
-# Citation
-
-"""
-This project uses KR-SBERT: A Pre-trained Korean-specific Sentence-BERT model.
-For more information, visit: https://github.com/snunlp/KR-SBERT
-
-If you use this model in your Project, please cite:
-@misc{kr-sbert,
-  author = {Park, Suzi and Hyopil Shin},
-  title = {KR-SBERT: A Pre-trained Korean-specific Sentence-BERT model},
-  year = {2021},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/snunlp/KR-SBERT}}
-}
-"""
