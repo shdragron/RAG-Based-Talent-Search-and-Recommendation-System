@@ -52,12 +52,10 @@ This project is built using FastAPI for the backend and HTML, CSS, JavaScript fo
 ### 1. **Upload Workflow**
 - PDF Upload -> Conversion to Document -> Metadata Extraction and Update -> Storage in Vector DB (ChromaDB)
 
-   ![Upload Workflow](./static/upload_workflow.png)
 
 ### 2. **Search Workflow**
 - JD Input -> Prompt Data Processing -> Information Retrieval -> Score Calculation (TP = RP + FP) -> Provide Recommended Candidate Rankings
 
-   ![Search Workflow](./static/search_workflow.png)
 
 ## Project Outcome and Future Development
 This project has significantly improved the inefficiencies of traditional recruitment processes, successfully enhancing recommendation accuracy and evaluation reliability. Future directions include multi-language support, adding detailed evaluation functions for more complex roles, and implementing more sophisticated user-customized recommendations.
