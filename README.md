@@ -1,6 +1,7 @@
 # RAG-Based Talent Search and Recommendation System
 
-<img src="[https://github.com/user-attachments/assets/69fef935-2676-48cf-9ef7-66cd85cad565](https://github.com/user-attachments/assets/6b5905f1-5e4c-49b6-a413-27a53fb6cf8f)" alt="image" style="width:800px;">
+<img src="https://github.com/user-attachments/assets/c0081eb6-1b22-4a82-80d6-ff55cff0b1f3" alt="image" style="width:800px;">
+
 ![image](https://github.com/user-attachments/assets/c0081eb6-1b22-4a82-80d6-ff55cff0b1f3)
 
 ## Project Overview
