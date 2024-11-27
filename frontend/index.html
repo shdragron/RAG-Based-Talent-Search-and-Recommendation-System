@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이력서 추천 시스템</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <!-- <img src="chatbot-icon.png" alt="Chatbot Icon" class="navbar-icon"> -->
+            <span class="navbar-title">ResumeAI Verifier</span>
+        </div>
+        <div class="navbar-right">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+    <div class="tab-container">
+        <div class="tabs">
+            <!-- <button class="tab-button active">이력서 추천</button> -->
+            <!-- <button class="tab-button">업로드된 이력서</button> -->
+        </div>
+        
+        <!-- Tab 1 Content -->
+        <div id="tab1" class="tab-content active">
+            <div class="container">
+                <div class="sidebar">
+                    <div class="chat-bot">
+                        <h2>채용 서비스 챗봇</h2>
+                        <div id="chat-window" class="chat-window">
+                            <!-- 채팅 메시지가 여기에 표시됩니다 -->
+                        </div>
+                        <div class="input-container">
+                            <input type="text" id="user-input" placeholder="채용 공고를 입력하세요...">
+                            <button id="send-button">전송</button>
+                        </div>
+                    </div>
+                    <div class="resume-upload">
+                        <h2>이력서 업로드</h2>
+                        <label for="resume-upload" id="upload-label" class="custom-button">파일 선택</label>
+                        <input type="file" id="resume-upload" accept=".pdf">
+                        <span id="file-name">선택된 파일 없음</span>
+                        <button id="upload-button">업로드</button>
+                    </div>
+                </div>
+                <div class="main-content">
+                    <h1>이력서 추천 결과</h1>
+                    <div class="card" id="recommendations-json">
+                        <h2>추천된 후보자</h2>
+                        <div class="json-display">
+                            <pre id="json-content"></pre>
+                        </div>
+                    </div>
+                    <div class="inner-tab-container">
+                        <div class="inner-tabs">
+                            <!-- 후보자 탭 버튼이 여기 생성됩니다 -->
+                        </div>
+                        <div class="inner-tab-contents">
+                            <!-- 후보자 콘텐츠가 여기 생성됩니다 -->
+                            <iframe id="resume-viewer" style="width: 100%; height: 500px; display: none;"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 추가 탭 및 콘텐츠 -->
+    </div>
+</body>
+</html>

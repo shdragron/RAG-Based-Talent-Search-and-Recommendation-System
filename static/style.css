@@ -1,0 +1,654 @@
+@font-face {
+    font-family: 'NanumSquareNeo';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"),
+        url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+}
+/* 기본 스타일 초기화 */
+body, html {
+    margin: 0;
+    padding: 0;
+
+    /* 기존 코드 */
+    /* height: 100vh;
+    overflow: hidden; */
+
+    /* 지피티 코드 */
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+
+
+    background-color: #f9f9f9;
+    font-family: 'NanumSquareNeo';
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'NanumSquareNeo';
+    /* background-color: #eceff1; */
+    background-color: #f9f9f9; /*밝은 회색 배경*/
+    margin: 0;
+}
+
+/* 컨테이너 설정 */
+.container {
+    display: flex;
+
+    /* 기존 코드 */
+    /* height: 100vh; */
+
+    /* 지피티 코드 */
+    overflow-y: auto; /* 필요시 내부 스크롤 */
+    max-height: 90vh; /* 페이지 전체 높이의 90%로 제한 */
+
+
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white; /* 중앙 컨테이너 */
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    
+}
+
+
+/* 사이드바 (왼쪽 부분) */
+.sidebar {
+    flex: 0 0 50%; /* 너비 50% 고정 */
+    background-color: #eef5f9;
+    color: #000;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    /* 기존 코드 */
+    /* height: 100vh; */
+
+    /* 지피티 코드 */
+    max-height: 100vh; /* 페이지 전체의 90% 높이로 제한 */
+    overflow-y: auto;
+
+
+    width: 300px;
+    margin-right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 메인 콘텐츠 (오른쪽 부분) */
+.main-content {
+    flex: 2; /* 너비 50% 고정 */
+    padding: 20px;
+    padding-top: 10px; /* 상단 패딩을 줄여서 요소들이 더 위로 이동하도록 설정 */
+    background-color: #ffffff;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    /* 기존 코드 */
+    /* height: 100vh; */
+
+    /* 지피티 코드 */
+    max-height: 100vh; /* 페이지 전체의 90% 높이로 제한 */
+    overflow-y: auto;
+
+
+    min-height: 100vh;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-top: 0;
+}
+.main-content h1 {
+    margin-top: 0px; /* 기존의 여백을 줄여 제목을 더 위로 올림 */
+}
+
+.card {
+    margin-top: 0px; /* "추천된 후보자" 카드의 여백 줄이기 */
+}
+
+/* 채팅 창 높이 조정 */
+.chat-window {
+    height: 400px;
+    overflow-y: auto;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid #e0e0e0; 경계선
+    background-color: #f9f9f9; /* 부드러운 배경 */
+    padding-left: 0; /* 채팅 창 왼쪽 패딩 제거 */
+    margin-left: 0; /* 채팅 창 왼쪽 마진 제거 */
+    
+}
+/* 헤더 스타일 */
+.chat-header {
+    background-color: #4c7faf; /* 주 색상 */
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+.chat-header h2 {
+    font-size: 22px; /* 글씨 크기 */
+    font-weight: bold; /* 굵은 텍스트 */
+    color: #4c7faf; /* 주 색상 */
+    text-align: center; /* 가운데 정렬 */
+    margin-bottom: 10px; /* 아래쪽 여백 */
+}
+
+
+.chat-bot {
+    flex: 1;
+    display: flex;
+    color: #000;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* padding: 20px; */ /*여유공간주고싶음 패딩추가*/
+}
+
+.chat-message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    max-width: 70%;
+}
+
+.message {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+
+.user-message {
+    background-color: transparent; /* 배경색 제거 */
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.bot-message {
+    background-color: transparent; /* 배경색 제거 */
+    color: #333333;
+    align-self: flex-start;
+    margin-right: auto;
+    padding: 10px 15px;
+    
+}
+
+.resume-upload {
+    border: 0px solid #4c7faf;   /* 이력서부분테두리만들고싶음 px앞에숫자추가*/
+    color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(247, 245, 245, 0.05);
+}
+.resume-upload h2 {
+    font-size: 16px;
+    color: #4c7faf; /* 제목 색상 */
+    margin-bottom: 10px;
+}
+.resume-upload input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.resume-upload button {
+    padding: 10px;
+    border: none;
+    background-color: #5bc0de;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.resume-upload button:hover {
+    background-color: #31b0d5;
+}
+
+.main-content h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.input-container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.input-container input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.input-container button {
+    padding: 10px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.input-container button:hover {
+    background-color: #4cae4c;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 15px;
+    border: none;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16px;
+    border-radius: 0 0 0 10px;
+}
+
+#send-button {
+    padding: 15px;
+    border: none;
+    background-color: #4c7faf;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 10px 0;
+}
+
+.applicant-info {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgb(39, 218, 66);
+}
+
+.analysis-result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.chart-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 50%; /* 컨테이너 너비 50%로 제한 */
+
+    /* 기존 코드 */
+    /* height: calc(100vh - 200px); 화면 높이에 따라 동적으로 조정 */
+    /* margin-top: 20x; */
+
+    /* 지피티 코드 */
+    height: auto; /* 적절한 고정 높이 설정 */
+    max-height: 300px;
+    overflow: hidden; /* 차트가 잘리지 않도록 설정 */
+    margin-top: 20px;
+
+
+    margin: 20px auto; /* 중앙 정렬 */
+    padding: 15px;
+    overflow-y: auto; /* 내용이 넘칠 경우 스크롤 추가 */
+}
+
+canvas#resume-chart {
+    /* 원래 코드 */
+    /* max-width: 100%;
+    max-height: 100%; */
+
+    /* 지피티 코드 */
+    width: 100%; /* 캔버스 너비를 부모에 맞춤 */
+    height: auto; /* 높이를 자동으로 설정 */
+    max-height: 300px; /* 최대 높이 설정 */
+}
+
+/* 카드 스타일 */
+.card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #4c7faf;
+    font-weight: bold;
+
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* CSS */
+.tabs {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.tab-button:hover {
+    background-color: #ddd;
+}
+
+.tab-button.active {
+    background-color: #ccc;
+    background-color: #d1e7dd;
+}
+
+.tab-content {
+    display: none;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* style.css에 추가 */
+.inner-tab-container {
+    margin-top: 20px;
+}
+
+.inner-tabs {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.inner-tab-button {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+}
+
+.inner-tab-button:hover {
+    background-color: #f0f0f0;
+}
+
+.inner-tab-button.inner-active {
+    border: 1px solid #ddd;
+    border-bottom: none;
+    background-color: white;
+    margin-bottom: -1px;
+}
+
+.inner-tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.inner-tab-content.inner-active {
+    display: block;
+    border: 1px solid #e9ecef;
+}
+
+.inner-tab-content {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.inner-tab-content.inner-active {
+    display: block;
+}
+
+.json-container {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.candidate-info {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.chart-container {
+    height: 300px;
+    margin-top: 20px;
+
+    /* 지피티 코드 */
+    overflow-y:hidden;
+    
+}
+
+/* .json-display {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    color: #000;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    overflow-x: auto;
+}
+
+.json-display pre {
+    font-family: 'Consolas', monospace;
+    margin: 0;
+    white-space: pre-wrap;
+    color: #333;
+} */
+
+#chat-window::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat-window::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+.tab-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.resume-card {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.tab-button, .inner-tab-button {
+    background-color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.tab-button.active, .inner-tab-button.inner-active {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+/* 파일 선택 버튼 숨기기 */
+#resume-upload {
+    display: none;
+}
+
+/* 사용자 정의 버튼 스타일 파일선택버튼 수정하려면여기*/
+.custom-button {
+    background-color: #5bc0de; /*  */
+    color: white; /* 흰색 텍스트 */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+/* 버튼 호버 효과 */
+.custom-button:hover {
+    background-color: #31b0d5;
+}
+
+/* 파일명 텍스트 스타일 */
+#file-name {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+}
+.message-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.message-container.user-message {
+    justify-content: flex-end;
+}
+
+.message-container.bot-message {
+    display: flex;
+    justify-content: flex-start; /* 봇 메시지는 왼쪽 정렬 */
+    align-items: center; /* 세로축 정렬 */
+    /* gap: 5px; 아이콘과 메시지 간격 줄이기 */
+}
+
+.icon {
+    font-size: 24px;
+    margin: 0 10px;
+    
+}
+
+.user-message .icon {
+    order: 2; /* 유저 메시지에서 아이콘 오른쪽 배치 */
+}
+
+.bot-message .icon {
+    order: 1; /* 봇 메시지에서 아이콘 왼쪽 배치 */
+    margin-left: 0; /* 아이콘과 채팅 박스의 왼쪽 여백 제거 */
+    
+}
+/* .message {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #f0f2f5;
+    word-wrap: break-word;
+} */
+
+.user-message .message {
+    background-color: #007bff;
+    color: white;
+    text-align: right;
+}
+
+.bot-message .message {
+    order: 2; /* 메시지가 아이콘 다음에 오도록 설정 */
+    background-color: #e9ecef;
+    color: black;
+    text-align: left;
+    margin-left: 0px; /* 메시지와 아이콘 사이 간격 */
+}
+/* 네비게이션 바 스타일 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.navbar-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4c7faf;
+}
+
+.navbar-right a {
+    text-decoration: none;
+    color: #4c7faf;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-right a:hover {
+    color: #3b6a9e;
+}
