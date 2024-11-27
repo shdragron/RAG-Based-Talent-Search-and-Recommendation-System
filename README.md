@@ -24,17 +24,14 @@ Modern recruitment is highly competitive, and the speed and accuracy of talent a
 1. **Contextual Analysis-Based Search**
    - Unlike existing similar services that rely solely on keyword matching, this system provides more accurate recommendations by analyzing context. The image below highlights this differentiation.
 
-   ![Contextual Analysis-Based Search](./static/contextual_search_comparison.png)
 
 2. **User-Customized Recommendation System**
    - Customizes job postings or career maps based on the applicant's resume information. This helps save time and enhances efficiency for both companies and applicants.
 
-   ![User Customized Recommendation System](./static/customized_recommendation.png)
 
 3. **Urgent Talent Search Support**
    - Supports companies in urgently finding candidates for specific roles, providing summaries and visual score distributions for each recommended candidate.
 
-   ![Urgent Talent Search Score Distribution](./static/score_distribution_visualization.png)
 
 ## Technology Stack and Development Approach
 This project is built using FastAPI for the backend and HTML, CSS, JavaScript for the frontend. Chroma DB and Pydantic Schema were utilized for database management, responsible for data validation and metadata processing. The Agile development methodology was adopted to iteratively improve functionality based on customer feedback.
