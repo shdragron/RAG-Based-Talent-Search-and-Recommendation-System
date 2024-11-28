@@ -472,8 +472,6 @@ def calculate_fp(resume_text, jd_data):
                 person_age = 124 - person_year
             logging.info(f"Calculated person_age: {person_age}")
             logging.info(f"JD age: {jd_age}")
-            logging.info(f"type JD age: {type(jd_age[0])}")
-            # logging.info(f"type JD age: {type(jd_age[1])}")
             
             try:
                 if jd_age[0] == 0:
@@ -577,7 +575,7 @@ def calculate_fp(resume_text, jd_data):
     # JD의 주요 항목 추출 (나이, 학과, 기술, 경력 등)
     fp_score = 0
     weight_age = 0.1
-    weight_major = 0.2
+    weight_major = 0.15
     weight_skill = 0.5
     weight_experience = 0.3
     age = 0
@@ -597,7 +595,7 @@ def calculate_fp(resume_text, jd_data):
 
     # 스킬 비교
     matching_skills = extract_matching_skills(jd_data.JD_keywords, resume_text)
-    skill += weight_skill * len(matching_skills) * 20  # 매칭된 기술당 20점
+    skill += weight_skill * len(matching_skills) * 40  # 매칭된 기술당 20점
 
     # 경력 비교
     if jd_data.JD_career and is_experience_appropriate(jd_data.JD_career, resume_text):

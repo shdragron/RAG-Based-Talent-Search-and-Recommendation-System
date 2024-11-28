@@ -28,7 +28,7 @@ lock = asyncio.Lock()
 
 app.mount(
     "/static",
-    StaticFiles(directory=r'C:\Users\edu49\myEnv\Scripts\HR_Project\static'),
+    StaticFiles(directory=r'C:\Users\User\Desktop\HR_Project\static'),
     name="static",
 )
 
